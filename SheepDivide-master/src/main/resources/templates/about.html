@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>SheepDivide</title>
+    <link rel="stylesheet" type="text/css" href="C:/Users/Jakob/IdeaProjects/Spring Projects/sheepdivide/src/main/resources/static/css/style2.css" th:href="@{/css/style2.css}" media="screen"/>
+
+</head>
+<body>
+<nav>
+    <div id="logo">SheepDivide</div>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+        <li><a href="../user/home.html">Home</a></li>
+        <li>
+            <!-- Dropdown menu -->
+            <label for="drop-1" class="toggle">Funktioner +</label>
+            <a href="#">Funktioner</a>
+            <input type="checkbox" id="drop-1"/>
+            <ul>
+                <!--<li><a href="OversigtMarker">Vis oversigt af marker</a></li>-->
+                <li><a href="../user/registerSheep.html">Registrer får</a></li>
+                <li><a href="updateSheep1.html">Rediger får</a></li>
+                <li><a href="../user/divideSheep.html">Opdel får</a></li>
+                <li><a href="../user/deleteSheep.html">Slet får</a></li>
+            </ul>
+
+        </li>
+        <li><a href="../user/displaySheep.html">Vis data</a></li>
+        <li><a th:href="@{/logout}">Log out</a></li>
+    </ul>
+</nav>
+
+
+<h1> About</h1>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="/static/img/sheepIcon/apple-icon-57x57.png" th:href="@{/img/sheepIcon/apple-icon-57x57.png}"/>
+    <link rel="apple-touch-icon" sizes="60x60" type="image/png" href="/static/img/sheepIcon/apple-icon-60x60.png" th:href="@{/img/sheepIcon/apple-icon-60x60.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" type="image/png" href="/static/img/sheepIcon/apple-icon-72x72.png" th:href="@{/img/sheepIcon/apple-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="76x76" type="image/png" href="/static/img/sheepIcon/apple-icon-76x76.png" th:href="@{/img/sheepIcon/apple-icon-76x76.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="/static/img/sheepIcon/apple-icon-114x114.png" th:href="@{/img/sheepIcon/apple-icon-114x114.png}"/>
+    <link rel="apple-touch-icon" sizes="120x120" type="image/png" href="/static/img/sheepIcon/apple-icon-120x120.png" th:href="@{/img/sheepIcon/apple-icon-120x120.png}"/>
+    <link rel="apple-touch-icon" sizes="144x144" type="image/png" href="/static/img/sheepIcon/apple-icon-144x144.png" th:href="@{/img/sheepIcon/apple-icon-144x144.png}"/>
+    <link rel="apple-touch-icon" sizes="152x152" type="image/png" href="/static/img/sheepIcon/apple-icon-152x152.png" th:href="@{/img/sheepIcon/apple-icon-152x152.png}"/>
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="/static/img/sheepIcon/apple-icon-180x180.png" th:href="@{/img/sheepIcon/apple-icon-180x180.png}"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/img/sheepIcon/android-icon-192x192.png" th:href="@{/img/sheepIcon/android-icon-192x192.png}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/sheepIcon/favicon-32x32.png" th:href="@{/img/sheepIcon/favicon-32x32.png}"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/sheepIcon/favicon-96x96.png" th:href="@{/img/sheepIcon/favicon-96x96.png}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/sheepIcon/favicon-16x16.png" th:href="@{/img/sheepIcon/favicon-16x16.png}"/>
+    <link rel="manifest" href="/static/img/sheepIcon/manifest.json" th:href="@{/img/sheepIcon/manifest.json}"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/static/img/sheepIcon/ms-icon-144x144.png" th:href="@{/img/sheepIcon/ms-icon-144x144.png}"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Registrer | SheepDivide</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css" th:href="@{/css/style2.css}" media="screen"/>
+    <style>
+        .confirm {
+            margin: 5px auto;
+            width: 300px;
+        }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .alert.success {background-color: #4CAF50;}
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div id="logo">SheepDivide <span>1.0</span></div>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+        <li><a href="../authorized/home.html">Home</a></li>
+        <li>
+            <!-- Dropdown menu -->
+            <label for="drop-1" class="toggle">Registrering +</label>
+            <a href="#">Registrering</a>
+            <input type="checkbox" id="drop-1"/>
+            <ul>
+                <li><a href="../authorized/registerSheep.html">Registrer får</a></li>
+                <li><a href="../authorized/updateSheep1.html">Opdater får</a></li>
+                <li><a href="../authorized/divideSheep.html">Opdel får</a></li>
+                <li><a href="../authorized/deleteSheep.html">Slet får</a></li>
+            </ul>
+        </li>
+        <li>
+            <!-- Dropdown menu -->
+            <label for="drop-2" class="toggle">Værktøjer +</label>
+            <a href="#">Værktøjer</a>
+            <input type="checkbox" id="drop-2"/>
+            <ul>
+                <li><a href="../authorized/displaySheep.html">Vis aktuelt data</a></li>
+                <li><a href="../authorized/divideRemainingSheep.html">Auto-Opdel</a></li>
+                <li><a href="../authorized/clearAllSheepOwners.html">Ryd ejere</a></li>
+                <li><a href="../authorized/deleteAllSheep.html">Slet alle får</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/logout}">Log out</a></li>
+    </ul>
+</nav>
+
+
+<h1>Registrer får</h1>
+
+<div class="confirm">
+    <div class="alert success">
+        <span class="closebtn">&times;</span>
+        <strong>Success </strong> får registreret.
+    </div>
+</div>
+
+<!--onsubmit="return successalert()"-->
+<form method="POST" th:action="@{/authorized/registerSheepSuccess.html}" registerSheep="Sheep">
+    <ul class="RegistrerSheep">
+
+        <li>
+            <label>Får ID <span class="required">*</span></label>
+            <input type="text" name="sheepId" class="field-long" />
+        </li>
+        <li>
+            <label>Vælg type <span class="required">*</span></label>
+            <select name="sheepType" class="field-select">
+                <option value="Ewe">Ewe</option>
+                <option value="Ewe lamb">Ewe Lamb</option>
+                <option value="Male lamb">Male Lamb</option>
+                <option value="Ram">Ram</option>
+            </select>
+        </li>
+        <li>
+            <label>Indsæt vægt(kg) <span class="required">*</span></label>
+            <input type="text" name="sheepWeight" class="field-long" />
+        </li>
+        <li>
+            <label>Uld(Point) <span class="required">*</span></label>
+            <select name="sheepWool" class="field-select">
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </li>
+        <li>
+            <!--Der var byttet rundt på horn og wool i name= og label-->
+            <label>Horn(Point) <span class="required">*</span></label>
+            <select name="sheepHorns" class="field-select">
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </li>
+        <li>
+            <label>Ben(Point) <span class="required">*</span></label>
+            <select name="sheepLegs" class="field-select">
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </li>
+        <li>
+            <label>Bemærkning(max 200 char.) </label>
+            <textarea name="note" class="field-long field-textarea"></textarea>
+        </li>
+        <li>
+            <input type="submit" value="Gem" />
+        </li>
+    </ul>
+</form>
+
+<script th:inline="javascript">
+//    function successalert() {
+
+    /*<![CDATA[*/
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+
+            setTimeout(function(){ div.style.display = "none"; });
+        }
+    }
+    /*]]>*/
+//    }
+</script>
+
+</body>
+</html>

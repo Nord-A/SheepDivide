@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="../static/img/sheepIcon/apple-icon-57x57.png" th:href="@{/img/sheepIcon/apple-icon-57x57.png}"/>
+    <link rel="apple-touch-icon" sizes="60x60" type="image/png" href="../static/img/sheepIcon/apple-icon-60x60.png" th:href="@{/img/sheepIcon/apple-icon-60x60.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" type="image/png" href="../static/img/sheepIcon/apple-icon-72x72.png" th:href="@{/img/sheepIcon/apple-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="76x76" type="image/png" href="../static/img/sheepIcon/apple-icon-76x76.png" th:href="@{/img/sheepIcon/apple-icon-76x76.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="../static/img/sheepIcon/apple-icon-114x114.png" th:href="@{/img/sheepIcon/apple-icon-114x114.png}"/>
+    <link rel="apple-touch-icon" sizes="120x120" type="image/png" href="../static/img/sheepIcon/apple-icon-120x120.png" th:href="@{/img/sheepIcon/apple-icon-120x120.png}"/>
+    <link rel="apple-touch-icon" sizes="144x144" type="image/png" href="../static/img/sheepIcon/apple-icon-144x144.png" th:href="@{/img/sheepIcon/apple-icon-144x144.png}"/>
+    <link rel="apple-touch-icon" sizes="152x152" type="image/png" href="../static/img/sheepIcon/apple-icon-152x152.png" th:href="@{/img/sheepIcon/apple-icon-152x152.png}"/>
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../static/img/sheepIcon/apple-icon-180x180.png" th:href="@{/img/sheepIcon/apple-icon-180x180.png}"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/sheepIcon/android-icon-192x192.png" th:href="@{/img/sheepIcon/android-icon-192x192.png}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/sheepIcon/favicon-32x32.png" th:href="@{/img/sheepIcon/favicon-32x32.png}"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/img/sheepIcon/favicon-96x96.png" th:href="@{/img/sheepIcon/favicon-96x96.png}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/sheepIcon/favicon-16x16.png" th:href="@{/img/sheepIcon/favicon-16x16.png}"/>
+    <link rel="manifest" href="../static/img/sheepIcon/manifest.json" th:href="@{/img/sheepIcon/manifest.json}"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="../static/img/sheepIcon/ms-icon-144x144.png" th:href="@{/img/sheepIcon/ms-icon-144x144.png}"/>
+    <meta name="theme-color" content="#ffffff"/>
+<!--UDKOMMENTER HVIS FEJL VED LOGIN OPSTÅR-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Velkommen | SheepDivide</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}" media="screen"/>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <nav>
+        <div id="logo">SheepDivide</div>
+
+    </nav>
+
+    <h1>Velkommen til SheepDivide webapp</h1>
+    <h3>SheepDivide gør det lettere og mere overskueligt for landmændene,</h3>
+        <h3>at administrere og opdele deres får ift. slagtning.</h3>
+
+    <form th:action="@{/login.html}" method="post">
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">SheepDivide log in</div>
+                <div class="login-form">
+                    <label for="username"></label>:
+                    <input type="text" class="login-field" id="username" name="username" placeholder="Brugernavn" autofocus="autofocus" />
+                    <div class="control-group">
+                        <label for="password"></label>:
+                        <input type="password" class="login-field" id="password" placeholder="Password" name="password" />
+                    </div>
+                    <input type="submit" class="btn" value="Log in" />
+                    <!--<input> id="remember_me" name="remember-me" type="checkbox"/>-->
+                    <!--<label for="remember_me" class="inline">Remember Me </label>-->
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

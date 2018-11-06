@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="/static/img/sheepIcon/apple-icon-57x57.png" th:href="@{/img/sheepIcon/apple-icon-57x57.png}"/>
+    <link rel="apple-touch-icon" sizes="60x60" type="image/png" href="/static/img/sheepIcon/apple-icon-60x60.png" th:href="@{/img/sheepIcon/apple-icon-60x60.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" type="image/png" href="/static/img/sheepIcon/apple-icon-72x72.png" th:href="@{/img/sheepIcon/apple-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="76x76" type="image/png" href="/static/img/sheepIcon/apple-icon-76x76.png" th:href="@{/img/sheepIcon/apple-icon-76x76.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="/static/img/sheepIcon/apple-icon-114x114.png" th:href="@{/img/sheepIcon/apple-icon-114x114.png}"/>
+    <link rel="apple-touch-icon" sizes="120x120" type="image/png" href="/static/img/sheepIcon/apple-icon-120x120.png" th:href="@{/img/sheepIcon/apple-icon-120x120.png}"/>
+    <link rel="apple-touch-icon" sizes="144x144" type="image/png" href="/static/img/sheepIcon/apple-icon-144x144.png" th:href="@{/img/sheepIcon/apple-icon-144x144.png}"/>
+    <link rel="apple-touch-icon" sizes="152x152" type="image/png" href="/static/img/sheepIcon/apple-icon-152x152.png" th:href="@{/img/sheepIcon/apple-icon-152x152.png}"/>
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="/static/img/sheepIcon/apple-icon-180x180.png" th:href="@{/img/sheepIcon/apple-icon-180x180.png}"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/img/sheepIcon/android-icon-192x192.png" th:href="@{/img/sheepIcon/android-icon-192x192.png}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/sheepIcon/favicon-32x32.png" th:href="@{/img/sheepIcon/favicon-32x32.png}"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/sheepIcon/favicon-96x96.png" th:href="@{/img/sheepIcon/favicon-96x96.png}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/sheepIcon/favicon-16x16.png" th:href="@{/img/sheepIcon/favicon-16x16.png}"/>
+    <link rel="manifest" href="/static/img/sheepIcon/manifest.json" th:href="@{/img/sheepIcon/manifest.json}"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/static/img/sheepIcon/ms-icon-144x144.png" th:href="@{/img/sheepIcon/ms-icon-144x144.png}"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Home | SheepDivide</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css" th:href="@{/css/style2.css}" media="screen"/>
+    <!-- href=".../static/css/style2.css"-->
+<!--<style>-->
+    <!--.image1 {-->
+        <!--background-image: url(../resources/static/img/screenregistrer.png);-->
+        <!--width: 460px;-->
+        <!--height: 345px;-->
+    <!--}-->
+    <!--.image2 {-->
+        <!--background-image: url(../resources/static/img/screenvisdata.png);-->
+        <!--width: 460px;-->
+        <!--height: 345px;-->
+    <!--}-->
+<!--</style>-->
+
+
+</head>
+<body>
+<nav>
+    <div id="logo">SheepDivide <span>1.0</span></div>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+        <li><a href="../authorized/home.html">Home</a></li>
+        <li>
+            <!-- Dropdown menu -->
+            <label for="drop-1" class="toggle">Registrering +</label>
+            <a href="#">Registrering</a>
+            <input type="checkbox" id="drop-1"/>
+            <ul>
+        <li><a href="../authorized/registerSheep.html">Registrer får</a></li>
+        <li><a href="../authorized/updateSheep1.html">Opdater får</a></li>
+        <li><a href="../authorized/divideSheep.html">Opdel får</a></li>
+        <li><a href="../authorized/deleteSheep.html">Slet får</a></li>
+    </ul>
+        </li>
+        <li>
+            <!-- Dropdown menu -->
+            <label for="drop-2" class="toggle">Værktøjer +</label>
+            <a href="#">Værktøjer</a>
+            <input type="checkbox" id="drop-2"/>
+            <ul>
+                <li><a href="../authorized/displaySheep.html">Vis aktuelt data</a></li>
+                <li><a href="../authorized/divideRemainingSheep.html">Auto-Opdel</a></li>
+                <li><a href="../authorized/clearAllSheepOwners.html">Ryd ejere</a></li>
+                <li><a href="../authorized/deleteAllSheep.html">Slet alle får</a></li>
+            </ul>
+        </li>
+        <li><a th:href="@{/logout}">Log out</a></li>
+    </ul>
+</nav>
+
+
+<h1>Velkommen til SheepDivide webapp</h1>
+<h3>SheepDivide gør det lettere og mere overskueligt for landmændene,</h3>
+<h3> at administrere og opdele deres får ift. slagtning.</h3>
+<div class="content">
+
+    <h2><span>Brugervejledning:</span></h2>
+    <div class="row">
+        <div class="column">
+            <h4>Registrering:</h4>
+            <p><span>Registrer får: </span> Registrerer et får. Indtast fårets værdier og tryk gem. Alle felter marketet med "*" er påkrævet.</p>
+            <p><span>Opdater får: </span> Ændrer et fårs værdier. Indtast fårets ID og tryk "Søg får". Lav ændringer på de ønskede værdier og tryk "Opdater".</p>
+            <p><span>Opdel får: </span> Opdeler fårene en af gangen. Indtast fårets ID og username for den bruger som skal eje fåret og tryk "Tilføj ejer"</p>
+            <p><span>Slet får: </span> Sletter ét får. Indtast fårets ID og tryk "Slet".</p>
+        </div>
+        <div class="column">
+            <!--HUSK MULIGVIS THYMELEAF STI-->
+            <img class="image1" src="/static/img/screenregistrer.png" th:src="@{/img/screenregistrer.png}" width="460" height="345"/>
+
+            <!--<div class="image1"></div>-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <!--HUSK MULIGVIS THYMELEAF STI-->
+            <img src="/static/img/screenvisdata.png" class="image2" th:src="@{/img/screenvisdata.png}" width="460" height="345"/>
+
+        </div>
+        <div class="column">
+            <h4>Værktøjer:</h4>
+            <p><span>Vis aktuelt data: </span> Viser den nuværende oversigt over de registrerede får, deres værdier samt hvem der ejer fåret.</p>
+            <p><span>Auto-Opdel: </span> Opdeler de får der ikke er tildelt en ejer, ud fra andelsparterne. Tryk på "Auto Opdel"</p>
+            <p><span>Ryd ejere: </span> Fjerner ejerskabet på alle får. Tryk på "Gør får ledige".</p>
+            <p><span>Slet alle får: </span> Sletter alle får. ADVARSEL kan ikke fortrydes. Tryk på "Slet alle får"</p>
+        </div>
+    </div>
+
+    <h4> Klik på de forskellige knapper i toppen for at bevæge dig rundt i appen</h4>
+</div>
+</body>
+</html>
